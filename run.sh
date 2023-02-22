@@ -12,7 +12,7 @@ cat >> update.sh << 'END'
 
 cd /root
 docker compose pull
-docker compose up --detach --force-recreate --pull always
+docker compose up --detach --force-recreate
 docker image prune -f
 END
 
