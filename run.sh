@@ -6,12 +6,6 @@ cd /root
 apt update && apt upgrade -y
 apt install -y unattended-upgrades apt-config-auto-update
 
-#docker
-apt install -y curl
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh ./get-docker.sh
-touch docker-compose.yml
-
 #update script
 cat >> update.sh << 'END'
 #!/bin/bash
@@ -24,3 +18,9 @@ END
 
 chmod +x update.sh
 ln -s /root/update.sh /etc/cron.weekly/update_docker
+
+#docker
+apt install -y curl
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh ./get-docker.sh
+touch docker-compose.yml
