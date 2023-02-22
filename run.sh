@@ -19,8 +19,9 @@ END
 chmod +x update.sh
 ln -s /root/update.sh /etc/cron.weekly/update_docker
 
+touch docker-compose.yml
+
 #docker
 apt install -y curl
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh ./get-docker.sh
-touch docker-compose.yml
