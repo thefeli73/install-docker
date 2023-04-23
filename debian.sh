@@ -25,3 +25,11 @@ touch docker-compose.yml
 apt install -y curl
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh ./get-docker.sh
+
+#autoheal
+docker run -d \
+    --name autoheal \
+    --restart=always \
+    -e AUTOHEAL_CONTAINER_LABEL=all \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    willfarrell/autoheal
