@@ -37,3 +37,11 @@ yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker
 systemctl start docker
 systemctl enable docker
 
+#autoheal
+docker run -d \
+    --name autoheal \
+    --restart=always \
+    -e AUTOHEAL_CONTAINER_LABEL=all \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    willfarrell/autoheal
+
