@@ -6,8 +6,3 @@ Debian:
 apt install -y curl
 curl -s https://raw.githubusercontent.com/thefeli73/install-docker/main/debian.sh | sh
 ```
-
-Rocky:
-```sh
-curl -s https://raw.githubusercontent.com/thefeli73/install-docker/main/rocky.sh | sh
-```
