@@ -11,9 +11,11 @@ cat >> update.sh << 'END'
 #!/bin/bash
 
 cd /root
+docker compose build --pull
 docker compose pull
-docker compose up --detach --force-recreate
+docker compose up --detach --force-recreate --build
 docker image prune -f
+docker system prune -f
 END
 
 chmod +x update.sh
